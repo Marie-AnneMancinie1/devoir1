@@ -1,0 +1,319 @@
+/* Variables CSS */
+:root {
+    --primary: #2b6cb0;
+    --primary-hover: #2c5282;
+    --bg-color: #f7fafc;
+    --card-bg: #ffffff;
+    --text-color: #2d3748;
+    --text-light: #718096;
+    --border-color: #e2e8f0;
+    --error-color: #e53e3e;
+    --success-bg: #c6f6d5;
+    --success-text: #22543d;
+    --danger-bg: #fed7d7;
+    --danger-text: #742a2a;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --radius: 8px;
+}
+
+/* Reset de base & Mobile First */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav .logo {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary);
+}
+
+/* Contrôles (Recherche & Filtres) */
+.controls-section {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: var(--spacing-lg);
+}
+
+.search-filter-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    padding: 0.65rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    width: 100%;
+}
+
+input:focus-visible, select:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.checkbox-group input {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.results-count {
+    font-style: italic;
+    color: var(--text-light);
+    margin-top: var(--spacing-sm);
+}
+
+/* Grille des livres (Cartes) - Mobile First (1 colonne) */
+.books-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.book-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.book-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.25rem;
+    color: var(--primary);
+}
+
+.book-card .author {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.book-card .details {
+    font-size: 0.85rem;
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.badge {
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.badge.available {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+}
+
+.badge.borrowed {
+    background-color: var(--danger-bg);
+    color: var(--danger-text);
+}
+
+.badge.category {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.btn-delete {
+    background-color: var(--error-color);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.btn-delete:hover {
+    background-color: #c53030;
+}
+
+.btn-delete:disabled {
+    background-color: #cbd5e0;
+    cursor: not-allowed;
+}
+
+/* Formulaire d'ajout */
+.form-section {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.form-section h2 {
+    margin-bottom: var(--spacing-md);
+    color: var(--primary);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.8rem;
+    min-height: 1rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: #e2e8f0;
+    color: var(--text-color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-secondary:hover {
+    background-color: #cbd5e0;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    padding: var(--spacing-md);
+    background-color: #edf2f7;
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+/* Points de rupture(@media) */
+@media (min-width: 600px) {
+    .search-filter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .books-grid {
+        grid-template-columns: repeat(2, 1fr); /* Tablette : 2 colonnes */
+    }
+}
+
+@media (min-width: 1024px) {
+    .search-filter-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .books-grid {
+        grid-template-columns: repeat(3, 1fr); /* Ordinateur : 3 colonnes ou plus */
+    }
+}
