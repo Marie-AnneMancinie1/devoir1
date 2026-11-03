@@ -34,3 +34,6 @@
 - Documentation MDN Web Docs (JavaScript, CSS Grid, LocalStorage)
 - Gemini
 
+# Dépôt du projet
+- Vous pouvez consulter le code source complet du devoir sur le dépôt Git :
+https://github.com/Marie-AnneMancinie1/devoir1.git
